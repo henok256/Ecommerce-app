@@ -9,7 +9,7 @@ const Navbar = ({ click }) => {
 
     const getCartCount = () => {
         return cartItems.reduce((qty, item) => qty + Number(item.qty), 0)
-    }
+    };
     return (
         <nav className="navbar">
             <div className="navbar__logo">

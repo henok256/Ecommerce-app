@@ -1,7 +1,9 @@
 import "./CartScreen.css";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom'
 
+// Componenets 
 import CartItem from '../components/CartItem';
 
 //Actions
@@ -14,6 +16,8 @@ const CartScreen = () => {
 
     const cart = useSelector((state) => state.cart);
     const { cartItems } = cart;
+
+    useEffect(() => { }, []);
 
     const qtyChangeHandler = (id, qty) => {
         dispatch(addToCart(id, qty))
@@ -30,7 +34,7 @@ const CartScreen = () => {
 
     const getTotalPrice = () => {
         return cartItems
-            .reduce((price, item) => price + item.price * item.qty, 0)
+            .reduce((price, item) => (item.price * item.qty) + price, 0)
             .toFixed(2)
     }
 
