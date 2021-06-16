@@ -11,10 +11,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import":"node backend/seederScript.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/henok256/Ecommerce-app.git"
-  },
+  
   "keywords": [
     "MERN",
     "ecommerce",

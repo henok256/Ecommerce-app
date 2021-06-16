@@ -1,30 +1,30 @@
 const Product = require('../models/product');
 
-const getAllProducts = async (req, res)=>{
-    try{
+const getAllProducts = async (req, res) => {
+    try {
         const products = await Product.find({});
-        res.jsoin(products);
+        res.json(products);
 
-    } catch(error) {
+    } catch (error) {
         console.error(error);
-        res.status(500).json({message:"sesrver error"});
+        res.status(500).json({ message: "Server error" });
 
     }
 }
 
-const getProductById = async (req, res)=>{
-    try{
+const getProductById = async (req, res) => {
+    try {
         const product = await Product.findById(req.params.id);
-        res.jsoin(product);
+        res.json(product);
 
-    } catch(error) {
+    } catch (error) {
         console.error(error);
-        res.status(500).json({message:"sesrver error"});
+        res.status(500).json({ message: "server error" });
 
     }
 };
 
-module.exports ={
+module.exports = {
     getAllProducts,
     getProductById
 }
